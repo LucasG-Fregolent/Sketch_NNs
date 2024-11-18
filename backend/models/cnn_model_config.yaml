@@ -1,0 +1,58 @@
+models:
+  model_1:
+    conv_layers: 2
+    conv_out_channels: [32, 64]
+    kernel_size: 3
+    stride: 1
+    final_dense_layers: [128]
+    num_classes: 3
+    batch_norm: false
+    dropout_rate: 0.0
+    pooling_type: MaxPool
+    pool_kernel_size: 2
+
+  model_2:
+    conv_layers: 3
+    conv_out_channels: [64, 128, 256]
+    kernel_size: 5
+    stride: 1
+    final_dense_layers: [256, 128]
+    num_classes: 3
+    batch_norm: false
+    dropout_rate: 0.0
+    pooling_type: MaxPool
+    pool_kernel_size: 2
+
+  model_3:
+    conv_layers: 4
+    conv_out_channels: [32, 64, 128, 256]
+    kernel_size: 3
+    stride: 2
+    final_dense_layers: [512, 256, 128]
+    num_classes: 3
+    batch_norm: false
+    dropout_rate: 0.0
+    pooling_type: MaxPool
+    pool_kernel_size: 2
+
+  model_4:
+    conv_layers: 4
+    conv_out_channels: [64, 128, 256, 512]
+    kernel_size: 3
+    stride: 1
+    batch_norm: true
+    activation: ReLU
+    dropout_rate: 0.3
+    pooling_type: MaxPool
+    pool_kernel_size: 2
+    final_dense_layers: [512, 256]
+    num_classes: 3
+
+  resnet_model_1:
+    num_blocks: [2, 2, 2, 2]  # Number of residual blocks for each layer
+    conv_out_channels: [64, 128, 256, 512, 512]  # Output channels for each residual layer
+    batch_norm: True  # Batch normalization enabled
+    dropout_rate: 0.3  # Dropout rate in final dense layers
+    pooling_type: MaxPool  # Type of pooling after initial convolution
+    final_dense_layers: [256, 128]  # Fully connected layers after residual layers
+    num_classes: 3  # Number of output classes
